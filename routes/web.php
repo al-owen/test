@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\moviesController;
 use App\Http\Controllers\categoriesController;
+use App\Http\Controllers\userController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,4 +27,11 @@ Route::get('/modify/{id}', [moviesController::class, 'modify']);
 Route::get('/update', [moviesController::class, 'update']);
 Route::get('/delete/{id}', [moviesController::class, 'delete']);
 Route::get('/add', [moviesController::class, 'addForm']);
-Route::get('/addMovie', [moviesController::class, 'addMovie']);
+Route::post('/addMovie', [moviesController::class, 'addMovie']);
+
+Route::get('/loginForm', function () {
+    return view('loginForm');
+});
+Route::post('/login', [userController::class, 'validarLogin']);
+Route::get('/logout', [userController::class, 'logout']);
+//Route::get('/loginIn', [userController::class, 'index']);

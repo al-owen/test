@@ -1,6 +1,7 @@
 <h2>Crear Pelicula</h2>
 {{-- url() es una funcion que permite coger la ruta relativa a lo raiz de web.php, esto evita tener que escribir la ruta absoluta --}}
-<form action="{{ url('/addMovie') }}" method="GET">
+<form action="{{ url('/addMovie') }}" method="POST" enctype="multipart/form-data">
+    @csrf
     <label for="name">Nombre:</label>
     <input type="text" id="name" name="name" value="" required>
     <br>
@@ -9,6 +10,9 @@
     <br>
     <label for="year">Año:</label>
     <input type="number" id="year" name="year" value="2023" required>
+    <br>
+    <label for="cover">Cover:</label>
+    <input type="file" id="cover" name="cover" required>
     <br>
     <label for="category_id">Categoria:</label>
     <select id="category_id" name="category_id" required>

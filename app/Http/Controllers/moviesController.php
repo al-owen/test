@@ -23,7 +23,11 @@ class moviesController extends Controller
         $movie->name = $r->name;
         $movie->description = $r->description;
         $movie->year = $r->year;
+        //$path = $r->cover->store('covers', 'public');
+        $path = $r->cover->store($r->file('cover')->getClientOriginalName(), 'public');
+        $movie->cover = 'storage/'.$path;
         //simplemente con decirle el id de la categoria ya se relacionan
+        //Category::find($r->category_id);
         $movie->category_id = $r->category_id;
         $movie->save();
         return redirect('/show');

@@ -18,8 +18,9 @@ return new class extends Migration
             $table->string('name');
             $table->text('description');
             $table->integer('year');
-            $table->unsignedBigInteger('category_id');//le pongo este tipo porque es el mismo que el id de category
-            $table->foreign('category_id')->references('id')->on('categories');//indico que category id, hace referencia al campo id de la tabla categories
+            $table->string('cover');
+            //$table->unsignedBigInteger('category_id');//le pongo este tipo porque es el mismo que el id de category
+            $table->foreignId('category_id')->constrained();//indico que category id, hace referencia al campo id de la tabla categories
             $table->timestamps();
         });
     }

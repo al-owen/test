@@ -9,13 +9,13 @@ class Movie extends Model
 {
     //declaro los campos que se rellenan
     protected $fillable = [
-        'name', 'description', 'year', 'category_id'
+        'name', 'description', 'year','cover', 'category_id'
     ];
 
     //establezco que una categoria le pertenece a pelicula
     public function category()
     {
-        return $this->hasOne(Category::class);
+        return $this->belongsTo(Category::class);
     }
 
     use HasFactory;

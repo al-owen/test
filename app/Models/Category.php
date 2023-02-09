@@ -15,7 +15,7 @@ class Category extends Model
     //establezco la relacion de que las peliculas tienen una categorias
     public function movies()
     {
-        return $this->belongsTo(Movie::class);
+        return $this->hasOne(Movie::class);
     }
 
     use HasFactory;

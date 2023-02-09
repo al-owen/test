@@ -21,6 +21,7 @@
                     acordaros de que es relacional, por lo tanto se crea un objeto de tipo category
                     dentro de la pelicula--}}
                 <td>{{ $movie->category->name }}</td>
+                <td><img src="{{ asset($movie->cover) }}" alt="cover" width="70" height="100"></td>
                 <td><a href="{{url('/modify')}}/{{$movie->id}}"> Modificar </a></td>
                 <td><a href="{{url('/delete')}}/{{$movie->id}}"> Borrar </a></td>
             </tr>
