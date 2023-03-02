@@ -34,4 +34,9 @@ Route::get('/loginForm', function () {
 });
 Route::post('/login', [userController::class, 'validarLogin']);
 Route::get('/logout', [userController::class, 'logout']);
+
+Route::get('/sections', function () {
+    return view('navbar');
+});
+
 //Route::get('/loginIn', [userController::class, 'index']);
